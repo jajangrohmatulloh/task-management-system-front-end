@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [TaskFormComponent, TaskListComponent],
@@ -19,6 +20,7 @@ import { TaskListComponent } from './components/task-list/task-list.component';
     MatCardModule,
     MatListModule,
     MatIconModule,
+    MatSelectModule,
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [TaskFormComponent, TaskListComponent],

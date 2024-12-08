@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../../../core/services/task.service';
 
 @Component({
@@ -7,10 +7,22 @@ import { TaskService } from '../../../../core/services/task.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss'],
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
+  tasks: any[] = [];
+
   constructor(private taskService: TaskService) {}
 
-  get tasks() {
-    return this.taskService.getAllTasks();
+  ngOnInit(): void {
+    this.loadTasks();
   }
+
+  loadTasks() {
+    this.taskService.getAllTasks().subscribe((data) => {
+      this.tasks = data;
+    });
+  }
+
+  // get tasks() {
+  //   return this.taskService.getAllTasks();
+  // }
 }

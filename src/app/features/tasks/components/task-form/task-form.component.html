@@ -15,7 +15,26 @@
       ></textarea>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="addTask()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Latest Time</mat-label>
+      <input
+        matInput
+        [(ngModel)]="latestTime"
+        name="latestTime"
+        type="datetime-local"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="status" name="status">
+        <mat-option value="Pending">Pending</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="createTask()">
       Add Task
     </button>
   </form>
